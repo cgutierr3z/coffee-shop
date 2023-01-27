@@ -14,6 +14,7 @@ class Ventas extends BaseController
 	protected $ventasModel;
 	protected $productosModel;
 	protected $validation;
+	protected $db;
 
 	public function __construct()
 	{
@@ -52,8 +53,6 @@ class Ventas extends BaseController
 			
 			$rs = $this->productosModel->where('id', $value->id_producto)->first();
 		
-			
-
 			$data['data'][$key] = array(
 				$value->id,
 				$value->id_producto,
@@ -90,7 +89,8 @@ class Ventas extends BaseController
 		$fields['id_producto'] = $this->request->getPost('id_producto');
 		$fields['cantidad'] = $this->request->getPost('cantidad');
 
-
+		$rs = $this->productosModel->where('id', $fields['id_producto'])->first();
+	
 		$this->validation->setRules([
 			'id_producto' => ['label' => 'Id producto', 'rules' => 'required|min_length[0]'],
 			'cantidad' => ['label' => 'Cantidad', 'rules' => 'required|numeric|min_length[0]'],
@@ -103,16 +103,27 @@ class Ventas extends BaseController
 			$response['messages'] = $this->validation->getErrors(); //Show Error in Input Form
 
 		} else {
-
-			if ($this->ventasModel->insert($fields)) {
-
-				$response['success'] = true;
-				$response['messages'] = lang("App.insert-success");
-			} else {
-
+			if($rs->stock<$fields['cantidad'])
+			{
+				//echo "debug4 menos menor meno\n";
 				$response['success'] = false;
-				$response['messages'] = lang("App.insert-error");
+				$response['messages'] = lang("App.stock-error");
+
+			} else {
+				if ($this->ventasModel->insert($fields)) {
+					$fields['stock'] = $rs->stock - $fields['cantidad'];
+					
+					$this->productosModel->update($fields['id_producto'], $fields);
+
+					$response['success'] = true;
+					$response['messages'] = lang("App.insert-success");
+				} else {
+	
+					$response['success'] = false;
+					$response['messages'] = lang("App.insert-error");
+				}
 			}
+			
 		}
 
 		return $this->response->setJSON($response);
