@@ -19,5 +19,5 @@ return [
     'update-error' => 'Error de actualizacion!',
     'delete-success' => 'Eliminado correctamente.',
     'delete-error' => 'Error al eliminar!',
- 
+    'stock-error' => 'No hay disponible en stock!',
 ];
