@@ -1,3 +1,17 @@
+# Intrucciones de instalacion
+1. `git clone` en el document root del servidor apache.
+2. Editar parametros de bd en archivo env y renombra a .env
+3. `composer install`
+4. `php spark db:create ci4coffeeshop`
+5. `php spark db:seed InitSeeder` 
+6. `php spark serve` acceder a http:localhost:8080
+
+## Consultas SQL
+1. Realizar una consulta que permita conocer cuál es el producto que más stock tiene
+- SELECT * FROM `ci4coffeeshop`.`productos` ORDER BY `stock` DESC LIMIT 1;
+2. Realizar una consulta que permita conocer cuál es el producto más vendido.
+- SELECT SUM(cantidad) as venta FROM `ci4coffeeshop`.`ventas` ORDER BY `cantidad` DESC LIMIT 1;
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
