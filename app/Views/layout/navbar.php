@@ -123,7 +123,7 @@
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
           <img src="<?= base_url('asset/img/user.jpg') ?>" class="user-image img-circle shadow" alt="User Image">
-          <span class="d-none d-md-inline">Alexander Pierce</span>
+          <span class="d-none d-md-inline">Carlos Gutierrez</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
           <!-- User image -->
@@ -131,7 +131,7 @@
             <img src="<?= base_url('asset/img/user.jpg') ?>" class="img-circle shadow" alt="User Image">
 
             <p>
-              Alexander Pierce - Web Developer
+              Carlos Gutierrez - Web Developer
               <small>Member since Nov. 2012</small>
             </p>
           </li>
