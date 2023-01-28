@@ -51,11 +51,11 @@ class Ventas extends BaseController
 			$ops .= '<a class="dropdown-item text-danger" onClick="remove(' . $value->id . ')"><i class="fa-solid fa-trash"></i>   ' .  lang("App.delete")  . '</a>';
 			$ops .= '</div></div>';
 
-			$rs = $this->productosModel->where('id', $value->id_producto)->first();
+			$rs = $this->productosModel->select("id,nombre")->where('id', $value->id_producto)->first();
 
 			$data['data'][$key] = array(
 				$value->id,
-				$value->id_producto,
+				$rs->id." - ".$rs->nombre,
 				$value->cantidad,
 
 				$ops

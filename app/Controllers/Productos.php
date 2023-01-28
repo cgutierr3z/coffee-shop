@@ -4,19 +4,21 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-
+use App\Models\CategoriasModel;
 use App\Models\ProductosModel;
 
 class Productos extends BaseController
 {
 
 	protected $productosModel;
+	protected $categoriasModel;
 	protected $validation;
 	protected $db;
 
 	public function __construct()
 	{
 		$this->productosModel = new ProductosModel();
+		$this->categoriasModel = new CategoriasModel();
 		$this->validation =  \Config\Services::validation();
 	}
 
@@ -61,13 +63,16 @@ class Productos extends BaseController
 			$ops .= '<a class="dropdown-item text-danger" onClick="remove(' . $value->id . ')"><i class="fa-solid fa-trash"></i>   ' .  lang("App.delete")  . '</a>';
 			$ops .= '</div></div>';
 
+			$rs = $this->categoriasModel->select("id,nombre")->where('id', $value->id_categoria)->first();
+			($rs!=null) ? $var = $rs->id." - ".$rs->nombre : $var = "";
+			
 			$data['data'][$key] = array(
 				$value->id,
 				$value->nombre,
 				$value->referencia,
 				$value->precio,
 				$value->peso,
-				$value->id_categoria,
+				$var,
 				$value->stock,
 
 				$ops

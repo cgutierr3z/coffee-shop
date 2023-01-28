@@ -3,38 +3,38 @@
 <?= $this->section("content") ?>
 
 <!-- Main content -->
-      <div class="card">
-        <div class="card-header">
-          <div class="row">
-            <div class="col-10 mt-2">
-              <h3 class="card-title">Productos</h3>
-            </div>
-            <div class="col-2">
-              <button type="button" class="btn float-right btn-success" onclick="save()" title="<?= lang("App.new") ?>"> <i class="fa fa-plus"></i>   <?= lang('App.new') ?></button>
-            </div>
-          </div>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <table id="data_table" class="table table-bordered table-striped">
-            <thead>
-              <tr>
-              <th>Id</th>
-<th>Nombre</th>
-<th>Referencia</th>
-<th>Precio</th>
-<th>Peso</th>
-<th>Id categoria</th>
-<th>Stock</th>
-
-			  <th></th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <!-- /.card-body -->
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-10 mt-2">
+        <h3 class="card-title">Productos</h3>
       </div>
-      <!-- /.card -->
+      <div class="col-2">
+        <button type="button" class="btn float-right btn-success" onclick="save()" title="<?= lang("App.new") ?>"> <i class="fa fa-plus"></i> <?= lang('App.new') ?></button>
+      </div>
+    </div>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="data_table" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Referencia</th>
+          <th>Precio</th>
+          <th>Peso</th>
+          <th>Id categoria</th>
+          <th>Stock</th>
+
+          <th>Acciones</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
 
 <!-- /Main content -->
 
@@ -48,47 +48,46 @@
       <div class="modal-body">
         <form id="data-form" class="pl-3 pr-3">
           <div class="row">
-<input type="hidden" id="id" name="id" class="form-control" placeholder="Id" required>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group mb-3">
-									<label for="nombre" class="col-form-label"> Nombre: <span class="text-danger">*</span> </label>
-									<input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" minlength="0"  maxlength="100" required>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group mb-3">
-									<label for="referencia" class="col-form-label"> Referencia: <span class="text-danger">*</span> </label>
-									<input type="text" id="referencia" name="referencia" class="form-control" placeholder="Referencia" minlength="0"  maxlength="100" required>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group mb-3">
-									<label for="precio" class="col-form-label"> Precio: <span class="text-danger">*</span> </label>
-									<input type="number" id="precio" name="precio" class="form-control" placeholder="Precio" minlength="0"  required>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group mb-3">
-									<label for="peso" class="col-form-label"> Peso: <span class="text-danger">*</span> </label>
-									<input type="number" id="peso" name="peso" class="form-control" placeholder="Peso" minlength="0"  required>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group mb-3">
-									<label for="id_categoria" class="col-form-label"> Id categoria: <span class="text-danger">*</span> </label>
-                  <select class="id_categoria form-control" name="id_categoria" id="id_categoria" required></select>
-									
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group mb-3">
-									<label for="stock" class="col-form-label"> Stock: <span class="text-danger">*</span> </label>
-									<input type="number" id="stock" name="stock" class="form-control" placeholder="Stock" minlength="0"  required>
-								</div>
-							</div>
-						</div>
+            <input type="hidden" id="id" name="id" class="form-control" placeholder="Id" required>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group mb-3">
+                <label for="nombre" class="col-form-label"> Nombre: <span class="text-danger">*</span> </label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" minlength="0" maxlength="100" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group mb-3">
+                <label for="referencia" class="col-form-label"> Referencia: <span class="text-danger">*</span> </label>
+                <input type="text" id="referencia" name="referencia" class="form-control" placeholder="Referencia" minlength="0" maxlength="100" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group mb-3">
+                <label for="precio" class="col-form-label"> Precio: <span class="text-danger">*</span> </label>
+                <input type="number" id="precio" name="precio" class="form-control" placeholder="Precio" minlength="0" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group mb-3">
+                <label for="peso" class="col-form-label"> Peso: <span class="text-danger">*</span> </label>
+                <input type="number" id="peso" name="peso" class="form-control" placeholder="Peso" minlength="0" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group mb-3">
+                <label for="id_categoria" class="col-form-label"> Id categoria: <span class="text-danger">*</span> </label>
+                <select class="id_categoria form-control" name="id_categoria" id="id_categoria" style="width:100%" required></select>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group mb-3">
+                <label for="stock" class="col-form-label"> Stock: <span class="text-danger">*</span> </label>
+                <input type="number" id="stock" name="stock" class="form-control" placeholder="Stock" minlength="0" required>
+              </div>
+            </div>
+          </div>
 
           <div class="form-group text-center">
             <div class="btn-group">
@@ -114,24 +113,29 @@
 <script>
   //searchbox
   $(document).ready(function() {
+
     $('.id_categoria').select2({
       dropdownParent: $('#data-modal .modal-body'),
       placeholder: '--- Selecionar Categoria ---',
       ajax: {
-        url: '<?php echo base_url('AutocompleteSearch/ajaxCatSearch');?>',
+        url: '<?php echo base_url('AutocompleteSearch/ajaxCatSearch'); ?>',
         dataType: 'json',
         delay: 25,
-        processResults: function(data){
+        data: [{
+          selected: true // Causes the selection to actually get selected.
+        }],
+        processResults: function(data) {
           return {
             results: data
           };
         },
         cache: true,
-      }
-    }).onClick("select2:select", function (e) {
-        var selected_element = $(e.currentTarget);
-        var select_val = selected_element.val();
+      },
+    }).on("select2:select", function(e) {
+      var selected_element = $(e.currentTarget);
+      var select_val = selected_element.val();
     });
+
   });
   // dataTables
   $(function() {
@@ -166,6 +170,8 @@
     return submitText;
   }
 
+  var selectTxt;
+
   function save(id) {
     // reset the form 
     $("#data-form")[0].reset();
@@ -193,16 +199,37 @@
           $("#form-btn").text(submitText);
           $('#data-modal').modal('show');
           //insert data to form
-          			$("#data-form #id").val(response.id);
-			$("#data-form #nombre").val(response.nombre);
-			$("#data-form #referencia").val(response.referencia);
-			$("#data-form #precio").val(response.precio);
-			$("#data-form #peso").val(response.peso);
-			$("#data-form #id_categoria").val(response.id_categoria);
-			$("#data-form #stock").val(response.stock);
+          $("#data-form #id").val(response.id);
+          $("#data-form #nombre").val(response.nombre);
+          $("#data-form #referencia").val(response.referencia);
+          $("#data-form #precio").val(response.precio);
+          $("#data-form #peso").val(response.peso);
+     
+          $.ajax({
+            url: '<?php echo base_url("categorias/getOne") ?>',
+            type: 'post',
+            data: {
+              id: response.id_categoria
+            },
+            dataType: 'json',
+            success: function(rs) {
+              $("#data-form #id_categoria").append($('<option>', {
+                value: response.id_categoria,
+                text: response.id_categoria+" - "+rs.nombre
+              }));
+              $("#data-form #id_categoria").val(response.id_categoria).trigger('change');
+            },
+            error: function(e){
+              $("#data-form #id_categoria").val("").trigger('change');
+            }
+          });
+          
+          
+          $("#data-form #stock").val(response.stock);
 
         }
       });
+
     }
     $.validator.setDefaults({
       highlight: function(element) {
@@ -309,14 +336,14 @@
           url: '<?php echo base_url($controller . "/remove") ?>',
           type: 'post',
           data: {
-            id : id
+            id: id
           },
           dataType: 'json',
           success: function(response) {
 
             if (response.success === true) {
               Swal.fire({
-                toast:true,
+                toast: true,
                 position: 'top-end',
                 icon: 'success',
                 title: response.messages,
@@ -327,7 +354,7 @@
               })
             } else {
               Swal.fire({
-                toast:false,
+                toast: false,
                 position: 'bottom-end',
                 icon: 'error',
                 title: response.messages,

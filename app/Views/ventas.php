@@ -23,7 +23,7 @@
           <th>Id producto</th>
           <th>Cantidad</th>
 
-          <th></th>
+          <th>Acciones</th>
         </tr>
       </thead>
     </table>
@@ -50,7 +50,7 @@
             <div class="col-md-12">
               <div class="form-group mb-3">
                 <label for="id_producto" class="col-form-label"> Id producto: <span class="text-danger">*</span> </label>
-                <select class="id_producto form-control" name="id_producto" id="id_producto" required></select>
+                <select class="id_producto form-control" name="id_producto" id="id_producto" style="width:100%" required></select>
               </div>
             </div>
             <div class="col-md-12">
@@ -89,19 +89,22 @@
       dropdownParent: $('#data-modal .modal-body'),
       placeholder: '--- Selecionar Producto ---',
       ajax: {
-        url: '<?php echo base_url('AutocompleteSearch/ajaxProdSearch');?>',
+        url: '<?php echo base_url('AutocompleteSearch/ajaxProdSearch'); ?>',
         dataType: 'json',
         delay: 25,
-        processResults: function(data){
+        data: [{
+          selected: true // Causes the selection to actually get selected.
+        }],
+        processResults: function(data) {
           return {
             results: data
           };
         },
         cache: true,
       }
-    }).on("select2:select", function (e) {
-        var selected_element = $(e.currentTarget);
-        var select_val = selected_element.val();
+    }).on("select2:select", function(e) {
+      var selected_element = $(e.currentTarget);
+      var select_val = selected_element.val();
     });
   });
   // dataTables
@@ -165,7 +168,28 @@
           $('#data-modal').modal('show');
           //insert data to form
           $("#data-form #id").val(response.id);
-          $("#data-form #id_producto").val(response.id_producto);
+
+          
+
+          $.ajax({
+            url: '<?php echo base_url("productos/getOne") ?>',
+            type: 'post',
+            data: {
+              id: response.id_producto
+            },
+            dataType: 'json',
+            success: function(rs) {
+              $("#data-form #id_producto").append($('<option>', {
+                value: response.id_producto,
+                text: response.id_producto+" - "+rs.nombre
+              }));
+              $("#data-form #id_producto").val(response.id_producto);
+            },
+            error: function(e){
+              $("#data-form #id_producto").val("").trigger('change');
+            }
+          });
+
           $("#data-form #cantidad").val(response.cantidad);
 
         }
