@@ -31,14 +31,14 @@ class Productos extends BaseController
 		return view('productos', $data);
 	}
 
-	public function getdata(){	
+	public function getdata()
+	{
 
 		$this->db->select('*');
 		$this->db->from('productos'); // this is first table name
-		$this->db->join('categorias', 'categorias.id = productos.id_categoria','left'); // this is second table name with both table ids
+		$this->db->join('categorias', 'categorias.id = productos.id_categoria', 'left'); // this is second table name with both table ids
 		$query = $this->db->get();
 		return $query->result();
-	
 	}
 
 	public function getAll()
@@ -56,7 +56,7 @@ class Productos extends BaseController
 			$ops .= '<i class="fa-solid fa-pen-square"></i>  </button>';
 			$ops .= '<div class="dropdown-menu">';
 			$ops .= '<a class="dropdown-item text-info" onClick="save(' . $value->id . ')"><i class="fa-solid fa-pen-to-square"></i>   ' .  lang("App.edit")  . '</a>';
-			$ops .= '<a class="dropdown-item text-orange" ><i class="fa-solid fa-copy"></i>   ' .  lang("App.copy")  . '</a>';
+			// $ops .= '<a class="dropdown-item text-orange" ><i class="fa-solid fa-copy"></i>   ' .  lang("App.copy")  . '</a>';
 			$ops .= '<div class="dropdown-divider"></div>';
 			$ops .= '<a class="dropdown-item text-danger" onClick="remove(' . $value->id . ')"><i class="fa-solid fa-trash"></i>   ' .  lang("App.delete")  . '</a>';
 			$ops .= '</div></div>';
