@@ -16,11 +16,12 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="<?= base_url('asset/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ?>">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url('asset/css/adminlte.min.css') ?>">
-     <!--<link rel="stylesheet" href="<?php /* echo base_url('asset/css/rtl/adminlte.rtl.min.css') */ ?>"> --> 
+    <link rel="stylesheet" href="<?= base_url('asset/css/adminlte.min.css') ?>"> 
+    <!-- <link rel="stylesheet" href="<?php /*echo base_url('asset/css/rtl/adminlte.rtl.min.css')*/ ?>">  -->
 	 
     <!-- SweetAlert2 Bootstrap or Dark -->
     <link rel="stylesheet" href="<?= base_url('asset/css/sweetalert2-dark.min.css') ?>">
+    <!-- Select2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- DataTables -->
  	<link rel="stylesheet" href="<?= base_url('asset/plugins/datatables/DataTables-1.11.3/css/dataTables.bootstrap5.min.css') ;?>">
@@ -28,5 +29,6 @@
 
     <link rel="stylesheet" href="<?= base_url('asset/plugins/datatables/StateRestore-1.1.1/css/stateRestore.bootstrap5.min.css') ?>">
     <!-- Dark style -->
-    <!--<link rel="stylesheet" href="<?php /* echo base_url('asset/css/dark/adminlte-dark-addon.min.css')*/ ?>">  --> 
+    <!-- <link rel="stylesheet" href="<?php /*echo base_url('asset/css/dark/adminlte-dark-addon.min.css')*/ ?>">   -->
+
 </head>

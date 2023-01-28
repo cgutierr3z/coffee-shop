@@ -91,7 +91,7 @@
       ajax: {
         url: '<?php echo base_url('AutocompleteSearch/ajaxProdSearch');?>',
         dataType: 'json',
-        delay: 250,
+        delay: 25,
         processResults: function(data){
           return {
             results: data

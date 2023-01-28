@@ -120,7 +120,7 @@
       ajax: {
         url: '<?php echo base_url('AutocompleteSearch/ajaxCatSearch');?>',
         dataType: 'json',
-        delay: 250,
+        delay: 25,
         processResults: function(data){
           return {
             results: data
@@ -128,7 +128,7 @@
         },
         cache: true,
       }
-    }).on("select2:select", function (e) {
+    }).onClick("select2:select", function (e) {
         var selected_element = $(e.currentTarget);
         var select_val = selected_element.val();
     });
