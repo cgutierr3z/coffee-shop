@@ -120,10 +120,7 @@
       ajax: {
         url: '<?php echo base_url('AutocompleteSearch/ajaxCatSearch'); ?>',
         dataType: 'json',
-        delay: 25,
-        data: [{
-          selected: true // Causes the selection to actually get selected.
-        }],
+        delay: 50,
         processResults: function(data) {
           return {
             results: data
