@@ -4,35 +4,6 @@
 
 <!-- code here.. -->
 
-
-<div class="row">
-    <div class="col">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">
-                    <i class="fas fa-text-width"></i>
-                    CoffeeShop Descrioon
-                </h3>
-            </div>
-
-            <div class="card-body">
-                <blockquote>
-                    <p>CoffeeShop es una Prueba Tecnica de Desarrollo Web, hecha por Carlos Gutierrez.</p>
-
-                    <p>Este proyecto esta construido con PHP usando Codeigniter4 y AdminLTE. <br /> 
-                    El codigo fuente se encuentra disponible en: 
-                    <a href="https://github.com/cgutierr3z/coffee-shop">https://github.com/cgutierr3z/coffee-shop</a></p>
-                    
-                    <small>2022/01/27 <cite title="Source Title">cg - dev</cite></small>
-                </blockquote>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-
 <div class="row">
     <div class="col-lg-4 col-6">
 
@@ -76,6 +47,33 @@
         </div>
     </div>
 
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-text-width"></i>
+                    CoffeeShop Descrioon
+                </h3>
+            </div>
+
+            <div class="card-body">
+                <blockquote>
+                    <p>CoffeeShop es una Prueba Tecnica de Desarrollo Web, hecha por Carlos Gutierrez.</p>
+
+                    <p>Este proyecto esta construido con PHP usando Codeigniter4 y AdminLTE. <br /> 
+                    El codigo fuente se encuentra disponible en: 
+                    <a href="https://github.com/cgutierr3z/coffee-shop">https://github.com/cgutierr3z/coffee-shop</a></p>
+                    
+                    <small>2022/01/27 <cite title="Source Title">cg - dev</cite></small>
+                </blockquote>
+            </div>
+
+        </div>
+
+    </div>
 </div>
 
 
