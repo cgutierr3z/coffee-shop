@@ -1,10 +1,14 @@
+# Deployment Test
+Disponible en: https://cgutierr3zdev.000webhostapp.com/
+
 # Intrucciones de instalacion
-1. `git clone` en el document root del servidor apache.
-2. Editar parametros de bd en archivo env y renombra a .env
-3. `composer install`
-4. `php spark db:create ci4coffeeshop`
-5. `php spark db:seed InitSeeder` 
-6. `php spark serve` acceder a http:localhost:8080
+1. `git clone https://github.com/cgutierr3z/coffee-shop.git`
+2. `cd coffee-shop`
+3. Editar parametros de bd en archivo env y renombrar a .env
+4. `composer install`
+5. `php spark db:create ci4coffeeshop`
+6. `php spark db:seed InitSeeder` 
+7. `php spark serve` acceder a http://localhost:8080/
 
 ## Consultas SQL
 1. Realizar una consulta que permita conocer cuál es el producto que más stock tiene
