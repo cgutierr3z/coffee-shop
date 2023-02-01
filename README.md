@@ -12,9 +12,9 @@ Disponible en: https://cgutierr3zdev.000webhostapp.com/
 
 ## Consultas SQL
 1. Realizar una consulta que permita conocer cuál es el producto que más stock tiene
-- SELECT * FROM `ci4coffeeshop`.`productos` ORDER BY `stock` DESC LIMIT 1;
+- SELECT * FROM productos ORDER BY productos.stock DESC LIMIT 1;
 2. Realizar una consulta que permita conocer cuál es el producto más vendido.
-- SELECT SUM(cantidad) as venta FROM `ci4coffeeshop`.`ventas` ORDER BY `cantidad` DESC LIMIT 1;
+- SELECT ventas.id_producto, productos.nombre, SUM(ventas.cantidad) AS 'cantidad ventas' FROM ventas JOIN productos ON ventas.id_producto = productos.id GROUP BY productos.id ORDER BY SUM(ventas.cantidad) DESC LIMIT 1;
 
 # CodeIgniter 4 Application Starter
 
