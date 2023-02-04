@@ -7,8 +7,9 @@ Disponible en: https://cgutierr3zdev.000webhostapp.com/
 3. Editar parametros de bd en archivo env y renombrar a .env
 4. `composer install`
 5. `php spark db:create ci4coffeeshop`
-6. `php spark db:seed InitSeeder` 
-7. `php spark serve` acceder a http://localhost:8080/
+6. `php spark migrate`
+7. `php spark db:seed InitSeeder` 
+8. `php spark serve` acceder a http://localhost:8080/
 
 ## Consultas SQL
 1. Realizar una consulta que permita conocer cuál es el producto que más stock tiene
